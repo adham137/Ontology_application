@@ -63,11 +63,10 @@ public class LabelValues {
         queryString.append("  ?movie rdf:type eg:Movies .\n");
         queryString.append("  ?movie eg:hasTitle ?movieTitle .\n");
         queryString.append("  ?movie eg:hasYear ?releaseYear . \n");
-        queryString.append("  ?movie eg:hasActor ?actor . \n");     //////
-        queryString.append("  ?movie eg:hasDirector ?director . \n");     //////
-        queryString.append("  ?movie eg:hasGenre ?genre . \n");     //////
+
 
         if(inc_genres.size() > 0 || exc_genres.size() > 0){
+            queryString.append("  ?movie eg:hasGenre ?genre . \n");
             if (inc_genres.size() > 0){
                 queryString.append(" FILTER( ");
                 for (String genre : inc_genres) {
@@ -93,6 +92,7 @@ public class LabelValues {
         }
 
         if(inc_directors.size() > 0 || exc_directors.size() > 0){
+            queryString.append("  ?movie eg:hasDirector ?director . \n");
             queryString.append("  ?director eg:hasName ?directorName .\n");
             if (inc_directors.size() > 0) {
                 queryString.append(" FILTER( ");
@@ -120,6 +120,7 @@ public class LabelValues {
         }
 
         if(inc_actors.size() > 0 || exc_actors.size() > 0){
+            queryString.append("  ?movie eg:hasActor ?actor . \n");
             queryString.append("  ?actor eg:hasName ?actorName .\n");
             if (inc_actors.size() > 0){
                 queryString.append(" FILTER( ");
