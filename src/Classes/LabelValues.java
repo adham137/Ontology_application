@@ -49,8 +49,10 @@ public class LabelValues {
         ArrayList<String> exc_actors = Actors.getExcludedActors();
 
         ArrayList<String> inc_directors = Directors.getIncludedDirectors();
+        ArrayList<String> exc_directors = Directors.getExcludedDirectors();
 
         ArrayList<String> inc_genres = Genres.getIncludedGenres();
+        ArrayList<String> exc_genres = Genres.getExcludedGenres();
 
         //////////////////////////////////////////////////////////////////////////////
         StringBuilder queryString = new StringBuilder();
@@ -65,47 +67,84 @@ public class LabelValues {
         queryString.append("  ?movie eg:hasDirector ?director . \n");     //////
         queryString.append("  ?movie eg:hasGenre ?genre . \n");     //////
 
-        // Add triple patterns for each condition with UNION
-        boolean isFirstCondition = true;
-
-        if (inc_genres.size() > 0){
-            queryString.append(" FILTER( ");
-            for (String genre : inc_genres) {
-                queryString.append("?genre = ").append("\""+genre+"\"");
-                if(inc_genres.indexOf(genre) == inc_genres.size()-1){
-                    queryString.append(" )\n");
-                }else{
-                    queryString.append(" ||");
+        if(inc_genres.size() > 0 || exc_genres.size() > 0){
+            if (inc_genres.size() > 0){
+                queryString.append(" FILTER( ");
+                for (String genre : inc_genres) {
+                    queryString.append("?genre = ").append("\""+genre+"\"");
+                    if(inc_genres.indexOf(genre) == inc_genres.size()-1){
+                        queryString.append(" )\n");
+                    }else{
+                        queryString.append(" ||");
+                    }
+                }
+            }
+            if (exc_genres.size() > 0){
+                queryString.append(" FILTER(!( ");
+                for (String genre : exc_genres) {
+                    queryString.append("?genre = ").append("\""+genre+"\"");
+                    if(exc_genres.indexOf(genre) == exc_genres.size()-1){
+                        queryString.append(" ))\n");
+                    }else{
+                        queryString.append(" ||");
+                    }
                 }
             }
         }
 
-        if (inc_directors.size() > 0) {
+        if(inc_directors.size() > 0 || exc_directors.size() > 0){
             queryString.append("  ?director eg:hasName ?directorName .\n");
-            queryString.append(" FILTER( ");
-            for (String director : inc_directors) {
-                queryString.append("?directorName = ").append("\""+director+"\"");
-                if(inc_directors.indexOf(director) == inc_directors.size()-1){
-                    queryString.append(" )\n");
-                }else{
-                    queryString.append(" || ");
+            if (inc_directors.size() > 0) {
+                queryString.append(" FILTER( ");
+                for (String director : inc_directors) {
+                    queryString.append("?directorName = ").append("\""+director+"\"");
+                    if(inc_directors.indexOf(director) == inc_directors.size()-1){
+                        queryString.append(" )\n");
+                    }else{
+                        queryString.append(" || ");
+                    }
+                }
+            }
+            if (exc_directors.size() > 0){
+                queryString.append("  ?director eg:hasName ?directorName .\n");
+                queryString.append(" FILTER(!( ");
+                for (String director : exc_directors) {
+                    queryString.append("?directorName = ").append("\""+director+"\"");
+                    if(exc_directors.indexOf(director) == exc_directors.size()-1){
+                        queryString.append(" ))\n");
+                    }else{
+                        queryString.append(" ||");
+                    }
                 }
             }
         }
 
-        if (inc_actors.size() > 0){
+        if(inc_actors.size() > 0 || exc_actors.size() > 0){
             queryString.append("  ?actor eg:hasName ?actorName .\n");
-            queryString.append(" FILTER( ");
-            for (String actor : inc_actors) {
-                queryString.append("?actorName = ").append("\""+actor+"\"");
-                if(inc_actors.indexOf(actor) == inc_actors.size()-1){
-                    queryString.append(" )\n");
-                }else{
-                    queryString.append(" || ");
+            if (inc_actors.size() > 0){
+                queryString.append(" FILTER( ");
+                for (String actor : inc_actors) {
+                    queryString.append("?actorName = ").append("\""+actor+"\"");
+                    if(inc_actors.indexOf(actor) == inc_actors.size()-1){
+                        queryString.append(" )\n");
+                    }else{
+                        queryString.append(" || ");
+                    }
+                }
+            }
+            if (exc_actors.size() > 0){
+                queryString.append("  ?actor eg:hasName ?actorName .\n");
+                queryString.append(" FILTER(!( ");
+                for (String actor : exc_actors) {
+                    queryString.append("?actorName = ").append("\""+actor+"\"");
+                    if(exc_actors.indexOf(actor) == exc_actors.size()-1){
+                        queryString.append(" ))\n");
+                    }else{
+                        queryString.append(" || ");
+                    }
                 }
             }
         }
-
 
         queryString.append("}");
         //////////////////////////////////////////////////////////////////////////////
