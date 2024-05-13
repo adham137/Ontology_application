@@ -456,7 +456,7 @@
         <hasLanguage xml:lang="ar">Arabic</hasLanguage>
         <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Mona_Zaki"/>
     </owl:NamedIndividual>
-    
+
 
 
     <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Ahmed_Ezz -->
@@ -471,6 +471,7 @@
         <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#El_Mamar"/>
         <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#El_Maslaha"/>
     </owl:NamedIndividual>
+
     
 
 

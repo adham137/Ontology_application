@@ -6,6 +6,7 @@ import Classes.LabelValues;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 
 import java.io.IOException;
 public class FXMLController4 {
@@ -17,6 +18,7 @@ public class FXMLController4 {
     @javafx.fxml.FXML
     public void initialize() {
         // Initialize the text area
+        textArea.setFont(Font.font("Verdana", 20));
         textArea.setText(LabelValues.SearchResult);
     }
     public void ToPane3(ActionEvent event) throws IOException {
