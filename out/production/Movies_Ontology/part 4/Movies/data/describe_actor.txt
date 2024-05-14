@@ -1,0 +1,1 @@
+DESCRIBE <http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor>
