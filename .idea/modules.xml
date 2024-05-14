@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Movies_Ontology.iml" filepath="$PROJECT_DIR$/Movies_Ontology.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Movies_Ontology_Project.iml" filepath="$PROJECT_DIR$/Movies_Ontology_Project.iml" />
     </modules>
   </component>
 </project>

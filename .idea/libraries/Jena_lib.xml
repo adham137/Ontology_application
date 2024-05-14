@@ -1,13 +1,13 @@
 <component name="libraryTable">
-  <library name="Jena lib">
+  <library name="Jena Lib">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/Jena lib" />
+      <root url="file://$PROJECT_DIR$/Application Source Files/Jena Lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/Jena lib-src" />
+      <root url="file://$PROJECT_DIR$/Application Source Files/Jena_Source Lib" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/Jena lib" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/Jena lib-src" recursive="false" type="SOURCES" />
+    <jarDirectory url="file://$PROJECT_DIR$/Application Source Files/Jena Lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/Application Source Files/Jena_Source Lib" recursive="false" type="SOURCES" />
   </library>
 </component>

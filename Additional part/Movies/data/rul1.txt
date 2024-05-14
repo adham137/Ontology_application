@@ -1,7 +1,0 @@
-@prefix ont: <http://www.semanticweb.org/hp/ontologies/2024/3/Movies#>
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-[ruleHasTwoRoles: (?s ont:hasActor ?c) (?b ont:hasDirector ?c) -> (?c ont:ActorAndWriter ?s) (?c ont:ActorAndDirector ?b)]
-[ruleActorAndWriter: (?s ont:hasActor ?c) (?b ont:hasWriter ?c) -> (?c ont:ActorAndWriter  ?s) (?c ont:ActorAndWriter ?b)]
-[ruleGenreClassification: (?movie ont:hasGenre ?genre), (?genre rdf:type ont:Thriller) -> (?movie rdf:type ont:ThrillerMovie)]
-[ruleGenreClassification1: (?movie ont:hasGenre ?genre), (?genre rdf:type ont:Romance) -> (?movie rdf:type ont:RomanceMovie)]
-
