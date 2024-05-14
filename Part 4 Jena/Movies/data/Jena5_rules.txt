@@ -1,0 +1,4 @@
+@prefix ns: <http://www.semanticweb.org/hp/ontologies/2024/3/Movies#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+[rule1: (?per ns:isActorOf ?movie1) (?per ns:isDirectorOf ?movie2) -> (?per rdf:type ns:ActorDirector) ]

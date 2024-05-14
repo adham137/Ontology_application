@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX movies: <http://www.semanticweb.org/hp/ontologies/2024/3/Movies#>
+
+CONSTRUCT {
+    ?person movies:hasName ?name .
+}
+WHERE {
+    ?person rdf:type movies:Actor .
+    ?person rdf:type movies:Director .
+    ?person movies:hasName ?name .
+}

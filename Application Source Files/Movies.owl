@@ -1,0 +1,817 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#"
+     xml:base="http://www.semanticweb.org/hp/ontologies/2024/3/Movies"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies">
+        <rdfs:comment rdf:datatype="&xsd;string">This ontology is about Movies</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasActor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasDirector">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasProducer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasProducer">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasWriter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasWriter">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#isActorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#isActorOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasActor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#isDirectorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#isDirectorOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Director"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasDirector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#isProducerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#isProducerOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Producer"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasProducer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#isWriterOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#isWriterOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Writer"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasWriter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasAge">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasCountry -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasCountry">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGender">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGender"/>
+                        <owl:hasValue>female</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGender"/>
+                        <owl:hasValue>male</owl:hasValue>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre"/>
+                        <owl:hasValue>Action</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre"/>
+                        <owl:hasValue>Comedy</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre"/>
+                        <owl:hasValue>Crime</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre"/>
+                        <owl:hasValue>Drama</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre"/>
+                        <owl:hasValue>Horror</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre"/>
+                        <owl:hasValue>Musical</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre"/>
+                        <owl:hasValue>Romance</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre"/>
+                        <owl:hasValue>Sci-Fi</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre"/>
+                        <owl:hasValue>Thriller</owl:hasValue>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasLanguage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasLanguage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasNationality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasNationality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasTitle">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasYear">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasYear"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="&xsd;integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="&xsd;integer">0</xsd:minExclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="&xsd;integer">2024</xsd:maxInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#isActorOf"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Director -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Director">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasYear"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasTitle"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasCountry"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGenre"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasLanguage"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasProducer"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Producer"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasDirector"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Director"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasWriter"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Writer"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasActor"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasAge"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasNationality"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#hasGender"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Producer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Producer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Writer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Writer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Africano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Africano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">2004</hasYear>
+        <hasGenre rdf:datatype="&xsd;string">Action</hasGenre>
+        <hasTitle rdf:datatype="&xsd;string">Africano</hasTitle>
+        <hasCountry rdf:datatype="&xsd;string">Egypt</hasCountry>
+        <hasLanguage xml:lang="ar">Arabic</hasLanguage>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Mona_Zaki"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Ahmed_Ezz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Ahmed_Ezz">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <hasAge rdf:datatype="&xsd;integer">52</hasAge>
+        <hasName rdf:datatype="&xsd;string">Ahmed Ezz</hasName>
+        <hasNationality rdf:datatype="&xsd;string">Egyptian</hasNationality>
+        <hasGender rdf:datatype="&xsd;string">male</hasGender>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#El_Mamar"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#El_Maslaha"/>
+    </owl:NamedIndividual>
+
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Ansel_Elgort -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Ansel_Elgort">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Baby_Driver"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Baby_Driver -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Baby_Driver">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">2017</hasYear>
+        <hasGenre rdf:datatype="&xsd;string">Action</hasGenre>
+        <hasTitle rdf:datatype="&xsd;string">Baby Driver</hasTitle>
+        <hasGenre rdf:datatype="&xsd;string">Thriller</hasGenre>
+        <hasCountry rdf:datatype="&xsd;string">USA</hasCountry>
+        <hasLanguage xml:lang="en">English</hasLanguage>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Ansel_Elgort"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Edgar_Wright"/>
+        <hasProducer rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Edgar_Wright"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Boogie_Nights -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Boogie_Nights">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">1997</hasYear>
+        <hasTitle rdf:datatype="&xsd;string">Boogie Nights</hasTitle>
+        <hasGenre rdf:datatype="&xsd;string">Comedy</hasGenre>
+        <hasGenre rdf:datatype="&xsd;string">Drama</hasGenre>
+        <hasCountry rdf:datatype="&xsd;string">USA</hasCountry>
+        <hasLanguage xml:lang="en">English</hasLanguage>
+        <hasWriter rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Paul_Thomas_Anderson"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Paul_Thomas_Anderson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Edgar_Wright -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Edgar_Wright">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Producer"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Writer"/>
+        <hasAge rdf:datatype="&xsd;integer">48</hasAge>
+        <hasNationality rdf:datatype="&xsd;string">British</hasNationality>
+        <hasName rdf:datatype="&xsd;string">Edgar Wright</hasName>
+        <hasGender rdf:datatype="&xsd;string">male</hasGender>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Baby_Driver"/>
+        <isProducerOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Baby_Driver"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Shaun_of_the_Dead"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#El_Mamar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#El_Mamar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">2019</hasYear>
+        <hasGenre rdf:datatype="&xsd;string">Action</hasGenre>
+        <hasGenre rdf:datatype="&xsd;string">Drama</hasGenre>
+        <hasCountry rdf:datatype="&xsd;string">Egypt</hasCountry>
+        <hasTitle rdf:datatype="&xsd;string">El Mamar</hasTitle>
+        <hasLanguage xml:lang="ar">Arabic</hasLanguage>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Ahmed_Ezz"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#El_Maslaha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#El_Maslaha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">2012</hasYear>
+        <hasGenre rdf:datatype="&xsd;string">Action</hasGenre>
+        <hasCountry rdf:datatype="&xsd;string">Egypt</hasCountry>
+        <hasTitle rdf:datatype="&xsd;string">El Maslaha</hasTitle>
+        <hasGenre rdf:datatype="&xsd;string">Thriller</hasGenre>
+        <hasLanguage xml:lang="ar">Arabic</hasLanguage>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Ahmed_Ezz"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Forrest_Gump -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Forrest_Gump">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">1994</hasYear>
+        <hasGenre rdf:datatype="&xsd;string">Drama</hasGenre>
+        <hasTitle rdf:datatype="&xsd;string">Forrest Gump</hasTitle>
+        <hasGenre rdf:datatype="&xsd;string">Romance</hasGenre>
+        <hasCountry rdf:datatype="&xsd;string">USA</hasCountry>
+        <hasLanguage xml:lang="en">English</hasLanguage>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Tom_Hanks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#John_Travolta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#John_Travolta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <hasAge rdf:datatype="&xsd;integer">70</hasAge>
+        <hasNationality rdf:datatype="&xsd;string">American</hasNationality>
+        <hasName rdf:datatype="&xsd;string">John Travolta</hasName>
+        <hasGender rdf:datatype="&xsd;string">male</hasGender>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Pulp_Fiction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Jojo_Rabbit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Jojo_Rabbit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">2019</hasYear>
+        <hasGenre rdf:datatype="&xsd;string">Comedy</hasGenre>
+        <hasTitle rdf:datatype="&xsd;string">Jojo Rabbit</hasTitle>
+        <hasCountry rdf:datatype="&xsd;string">USA</hasCountry>
+        <hasLanguage xml:lang="en">English</hasLanguage>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Scarlett_Johansson"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Taika_Waititi"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Taika_Waititi"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Taika_Waititi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Kill_Bill -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Kill_Bill">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">2003</hasYear>
+        <hasGenre rdf:datatype="&xsd;string">Action</hasGenre>
+        <hasGenre rdf:datatype="&xsd;string">Crime</hasGenre>
+        <hasTitle rdf:datatype="&xsd;string">Kill Bill (volume1)</hasTitle>
+        <hasGenre rdf:datatype="&xsd;string">Thriller</hasGenre>
+        <hasCountry rdf:datatype="&xsd;string">USA</hasCountry>
+        <hasLanguage xml:lang="en">English</hasLanguage>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Quentin_Tarantino"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Quentin_Tarantino"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Quentin_Tarantino"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Uma_Thurman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Mona_Zaki -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Mona_Zaki">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <hasAge rdf:datatype="&xsd;integer">47</hasAge>
+        <hasNationality rdf:datatype="&xsd;string">Egyptian</hasNationality>
+        <hasName rdf:datatype="&xsd;string">Mona Zaki</hasName>
+        <hasGender rdf:datatype="&xsd;string">female</hasGender>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Africano"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Paul_Thomas_Anderson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Paul_Thomas_Anderson">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Writer"/>
+        <hasAge rdf:datatype="&xsd;integer">51</hasAge>
+        <hasNationality rdf:datatype="&xsd;string">American</hasNationality>
+        <hasName rdf:datatype="&xsd;string">Paul Thomas Anderson</hasName>
+        <hasGender rdf:datatype="&xsd;string">male</hasGender>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Boogie_Nights"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Boogie_Nights"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#There_Will_Be_Blood"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#There_Will_Be_Blood"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Pulp_Fiction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Pulp_Fiction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">1994</hasYear>
+        <hasGenre rdf:datatype="&xsd;string">Crime</hasGenre>
+        <hasTitle rdf:datatype="&xsd;string">Pulp Fiction</hasTitle>
+        <hasGenre rdf:datatype="&xsd;string">Thriller</hasGenre>
+        <hasCountry rdf:datatype="&xsd;string">USA</hasCountry>
+        <hasLanguage xml:lang="en">English</hasLanguage>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#John_Travolta"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Quentin_Tarantino"/>
+        <hasWriter rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Quentin_Tarantino"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Quentin_Tarantino"/>
+        <hasActor rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Uma_Thurman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Quentin_Tarantino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Quentin_Tarantino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Writer"/>
+        <hasAge rdf:datatype="&xsd;integer">53</hasAge>
+        <hasNationality rdf:datatype="&xsd;string">American</hasNationality>
+        <hasName rdf:datatype="&xsd;string">Quentin Tarantino</hasName>
+        <hasGender rdf:datatype="&xsd;string">male</hasGender>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Kill_Bill"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Kill_Bill"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Kill_Bill"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Pulp_Fiction"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Pulp_Fiction"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Pulp_Fiction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Scarlett_Johansson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Scarlett_Johansson">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <hasAge rdf:datatype="&xsd;integer">39</hasAge>
+        <hasNationality rdf:datatype="&xsd;string">American</hasNationality>
+        <hasName rdf:datatype="&xsd;string">Scarlett Johanson</hasName>
+        <hasGender rdf:datatype="&xsd;string">female</hasGender>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Jojo_Rabbit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Shaun_of_the_Dead -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Shaun_of_the_Dead">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">2004</hasYear>
+        <hasGenre rdf:datatype="&xsd;string">Comedy</hasGenre>
+        <hasTitle rdf:datatype="&xsd;string">Shaun of the Dead</hasTitle>
+        <hasCountry rdf:datatype="&xsd;string">USA</hasCountry>
+        <hasLanguage xml:lang="en">English</hasLanguage>
+        <hasDirector rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Edgar_Wright"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Taika_Waititi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Taika_Waititi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Writer"/>
+        <hasAge rdf:datatype="&xsd;integer">47</hasAge>
+        <hasNationality rdf:datatype="&xsd;string">New Zealand</hasNationality>
+        <hasName rdf:datatype="&xsd;string">Taika Waititi</hasName>
+        <hasGender rdf:datatype="&xsd;string">male</hasGender>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Jojo_Rabbit"/>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Jojo_Rabbit"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Jojo_Rabbit"/>
+        <isDirectorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Thor:Ragnarok"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#There_Will_Be_Blood -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#There_Will_Be_Blood">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">2007</hasYear>
+        <hasTitle rdf:datatype="&xsd;string">There Will Be Blood</hasTitle>
+        <hasGenre rdf:datatype="&xsd;string">Thriller</hasGenre>
+        <hasCountry rdf:datatype="&xsd;string">USA</hasCountry>
+        <hasLanguage xml:lang="en">English</hasLanguage>
+        <hasWriter rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Paul_Thomas_Anderson"/>
+        <hasDirector rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Paul_Thomas_Anderson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Thor:Ragnarok -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Thor:Ragnarok">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Movies"/>
+        <hasYear rdf:datatype="&xsd;integer">2017</hasYear>
+        <hasGenre rdf:datatype="&xsd;string">Action</hasGenre>
+        <hasGenre rdf:datatype="&xsd;string">Sci-Fi</hasGenre>
+        <hasTitle rdf:datatype="&xsd;string">Thor:Ragnarok</hasTitle>
+        <hasCountry rdf:datatype="&xsd;string">USA</hasCountry>
+        <hasLanguage xml:lang="en">English</hasLanguage>
+        <hasDirector rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Taika_Waititi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Tom_Hanks -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Tom_Hanks">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Director"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <hasAge rdf:datatype="&xsd;integer">67</hasAge>
+        <hasNationality rdf:datatype="&xsd;string">American</hasNationality>
+        <hasName rdf:datatype="&xsd;string">Tom Hanks</hasName>
+        <hasGender rdf:datatype="&xsd;string">male</hasGender>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Forrest_Gump"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Uma_Thurman -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Uma_Thurman">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Actor"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Persons"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Writer"/>
+        <hasAge rdf:datatype="&xsd;integer">43</hasAge>
+        <hasNationality rdf:datatype="&xsd;string">American</hasNationality>
+        <hasName rdf:datatype="&xsd;string">Uma Thurman</hasName>
+        <hasGender rdf:datatype="&xsd;string">female</hasGender>
+        <isWriterOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Kill_Bill"/>
+        <isActorOf rdf:resource="http://www.semanticweb.org/hp/ontologies/2024/3/Movies#Pulp_Fiction"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
