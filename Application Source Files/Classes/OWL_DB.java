@@ -15,54 +15,49 @@ import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-class OpenOWL {
-    static  String  s;
+public class OWL_DB
+{
+    static String str;
     static String path = "C:\\Users\\Adham\\Desktop\\sem 8\\Ontologies\\proj\\Ontologies Project Final\\Movies_Ontology_Project\\Application Source Files\\Movies.owl";
 
-    // Connect to the Ontology
-    static OntModel OpenConnectOWL(){
+    // Connect to the ontology
+    static OntModel ConnectToOwl(){
 
-        OntModel mode = null;
-        mode = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM_RULE_INF );
-        java.io.InputStream in = FileManager.get().open( path );
-        if (in == null) {
-            throw new IllegalArgumentException("ontology file not found");
+        OntModel model = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM_RULE_INF );
+        java.io.InputStream input = FileManager.get().open( path );
+        if (input == null) {
+            throw new IllegalArgumentException("No Such OWL file");
         }
-        return  (OntModel) mode.read(in, "");
+        return  (OntModel) model.read(input, "");
     }
 
-    // Query the owl file
-    static  org.apache.jena.query.ResultSet ExecSparQl(String Query){
+    // Query the OWL file
+    static  org.apache.jena.query.ResultSet querySPARQL(String Query){
 
         org.apache.jena.query.Query query = QueryFactory.create(Query);
-        QueryExecution qe = QueryExecutionFactory.create(query, OpenConnectOWL());
-        org.apache.jena.query.ResultSet results = qe.execSelect();
-        //System.out.println("test " + ResultSetFormatter.asText(results, (Prologue) qe));
+        QueryExecution q = QueryExecutionFactory.create(query, ConnectToOwl());
+        org.apache.jena.query.ResultSet results = q.execSelect();
         //System.out.println("The Query: "+Query);
-
         return results;
 
     }
-
     // Query the owl file and return the result as a string
-    static  String GetResultAsString(String Query){
+    static  String GetQueryResultAsString(String Query){
         try {
             org.apache.jena.query.Query query = QueryFactory.create(Query);
-            QueryExecution qe = QueryExecutionFactory.create(query, OpenConnectOWL());
-            org.apache.jena.query.ResultSet results = qe.execSelect();
+            org.apache.jena.query.ResultSet results = querySPARQL(Query);
             if(results.hasNext()){
                 ByteArrayOutputStream go = new ByteArrayOutputStream ();
                 ResultSetFormatter.out((OutputStream)go ,results, query);
                 //  String s = go.toString();
-                s = new String(go.toByteArray(), "UTF-8");
+                str = new String(go.toByteArray(), "UTF-8");
             }
             else{
-                s = "Sorry :(";
+                str = "END";
             }
         } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(OpenOWL.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OWL_DB.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return s;
+        return str;
     }
-
 }

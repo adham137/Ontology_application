@@ -32,7 +32,7 @@ public class LabelValues {
         StringBuilder res = new StringBuilder();
         String queryString = constructQuery();
         System.out.println(queryString);
-        org.apache.jena.query.ResultSet results = OpenOWL.ExecSparQl(queryString);
+        org.apache.jena.query.ResultSet results = OWL_DB.querySPARQL(queryString);
 
 
         while(results.hasNext()){

@@ -28,7 +28,7 @@ public class Genres {
                 "  ?movie eg:hasGenre ?genre.\n" +
                 "}";
 
-        org.apache.jena.query.ResultSet results = OpenOWL.ExecSparQl(queryString);
+        org.apache.jena.query.ResultSet results = OWL_DB.querySPARQL(queryString);
 
         // Populate availableGenres
         while(results.hasNext()){

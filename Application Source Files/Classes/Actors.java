@@ -30,7 +30,7 @@ public class Actors {
                 "  ?actor eg:hasName ?actorName.\n" +
                 "}";
 
-        org.apache.jena.query.ResultSet results = OpenOWL.ExecSparQl(queryString);
+        org.apache.jena.query.ResultSet results = OWL_DB.querySPARQL(queryString);
 
         // Populate availbleActors
         while(results.hasNext()){
